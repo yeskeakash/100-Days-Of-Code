@@ -58,6 +58,20 @@ class Stack{
     }
     return x;
   }
+
+  // peek using LL
+  int peek(int pos){
+    // int x = -1;
+    Node *p = top;
+    for(int i=0; p!=nullptr && i<pos-1;i++){
+      p = p->next;
+    }
+    if(p!=nullptr){
+      return p->data;
+    }
+    return -1;
+  }
+
 };
 
 int main(){
@@ -68,6 +82,8 @@ int main(){
   st.push(13);
   st.push(14);
   st.Display();
-  st.pop();
-  st.Display();
+  // st.pop();
+  // st.Display();
+  cout<<"value: "<<st.peek(6);
+
 }
