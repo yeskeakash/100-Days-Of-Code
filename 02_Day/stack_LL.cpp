@@ -58,6 +58,33 @@ class Stack{
     }
     return x;
   }
+
+  // peek using LL
+  int peek(int pos){
+    // int x = -1;
+    Node *p = top;
+    for(int i=0; p!=nullptr && i<pos-1;i++){
+      p = p->next;
+    }
+    if(p!=nullptr){
+      return p->data;
+    }
+    return -1;
+  }
+
+  // check if stack is empty
+  bool isEmpty(){
+    if(top==nullptr)
+      return 1;
+    return 0;
+  }
+
+  bool isFull(){
+    Node *t = new Node(0);
+    if(t==nullptr)
+      return 1;
+    return 0;
+  }
 };
 
 int main(){
@@ -70,4 +97,20 @@ int main(){
   st.Display();
   st.pop();
   st.Display();
+  cout<<"value: "<<st.peek(2)<<endl;
+
+  if(st.isEmpty()){
+    cout << "The stack is empty." << endl;
+  } 
+  else {
+    cout << "The stack is not empty." << endl;
+  }
+
+    if(st.isFull()){
+    cout << "The stack is Full." << endl;
+  } 
+  else {
+    cout << "The stack is not Full." << endl;
+  }
+
 }
