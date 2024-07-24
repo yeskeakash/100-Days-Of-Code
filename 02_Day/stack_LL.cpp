@@ -21,7 +21,7 @@ class Stack{
   public:
     Stack() : top(nullptr) {}
 
-    //push using LL
+  // push using LL
   void push(int x){
     Node *t = new Node(x);
     if(t==NULL){
@@ -42,6 +42,22 @@ class Stack{
     }
     cout<<endl;
   }
+
+  // pop using LL
+  int pop(){
+    int x = -1;
+    Node *p;
+    if(top==nullptr){
+      cout<<"stack is empty";
+    }
+    else{
+      p=top;
+      x = p->data;
+      top = top->next;
+      free(p);
+    }
+    return x;
+  }
 };
 
 int main(){
@@ -51,5 +67,7 @@ int main(){
   st.push(12);
   st.push(13);
   st.push(14);
+  st.Display();
+  st.pop();
   st.Display();
 }
