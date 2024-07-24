@@ -72,6 +72,19 @@ class Stack{
     return -1;
   }
 
+  // check if stack is empty
+  bool isEmpty(){
+    if(top==nullptr)
+      return 1;
+    return 0;
+  }
+
+  bool isFull(){
+    Node *t = new Node(0);
+    if(t==nullptr)
+      return 1;
+    return 0;
+  }
 };
 
 int main(){
@@ -82,8 +95,22 @@ int main(){
   st.push(13);
   st.push(14);
   st.Display();
-  // st.pop();
-  // st.Display();
-  cout<<"value: "<<st.peek(6);
+  st.pop();
+  st.Display();
+  cout<<"value: "<<st.peek(2)<<endl;
+
+  if(st.isEmpty()){
+    cout << "The stack is empty." << endl;
+  } 
+  else {
+    cout << "The stack is not empty." << endl;
+  }
+
+    if(st.isFull()){
+    cout << "The stack is Full." << endl;
+  } 
+  else {
+    cout << "The stack is not Full." << endl;
+  }
 
 }
